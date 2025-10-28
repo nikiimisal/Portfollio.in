@@ -93,6 +93,7 @@
     footer{padding:22px;text-align:center;color:var(--muted)}
 
     @media (max-width:980px){.hero{flex-direction:column-reverse;min-height:unset;padding-bottom:40px}.hero-right{width:92%}.projects-carousel{gap:12px}.contact-grid{grid-template-columns:1fr}.main-nav{display:none}.corner-actor{display:none}}
+/* ===== Main Skills Section ===== */
 #skills {
   text-align: center;
   padding: 80px 20px;
@@ -101,6 +102,9 @@
 #skills h2 {
   font-size: 2em;
   margin-bottom: 10px;
+  color: #00d1ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 #skills .sub {
@@ -123,6 +127,7 @@
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   font-size: 1rem;
   color: #fff;
@@ -140,6 +145,51 @@
   box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2);
 }
 
+
+/* ===== Additional Skills Section ===== */
+#additional-skills {
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 40px;
+  transform: scale(0.9); /* 👈 shrinks section content by 10% */
+  transform-origin: center;
+}
+
+#additional-skills h2 {
+  color: #00d1ff;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+#additional-skills .sub {
+  color: #bbb;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#additional-skills .skill-grid {
+  gap: 16px;
+}
+
+#additional-skills .skill {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 6px;
+  border-radius: 10px;
+  transform: scale(0.9); /* 👈 each box scaled smaller */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#additional-skills .skill img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+#additional-skills .skill:hover {
+  transform: scale(1); /* smooth hover pop effect */
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.15);
+}
 
 
 
@@ -497,9 +547,32 @@
     <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />Python</div>
     <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" alt="Networking" />Networking</div>
   </div>
-</section>
 
-    </section>
+
+         <!-- 🔹 Additional Skills Section -->
+<section id="additional-skills" class="container section">
+  <h2>Additional Skills</h2>
+  <p class="sub">Programming · Web · Databases · Networking</p>
+
+  <div class="skill-grid">
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />HTML</div>
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />CSS</div>
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />JavaScript</div>
+
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />Java</div>
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />C</div>
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />C++</div>
+
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" />.NET</div>
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />MongoDB</div>
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />MySQL</div>
+
+    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" alt="Networking" />Networking Concepts</div>
+  </div>
+
+  <p class="sub">Comfortable working across multiple languages and technologies, with a strong foundation in system design and networking.</p>
+</section>
+   </section>    
 
  <section id="projects" class="container section">
   <div class="section-header">
@@ -561,9 +634,10 @@
   </div>
   
 </section>
-     <h1>Contact</h1>   
+     
   
     <section id="contact" class="container section">
+       <h1>Contact</h1>  
       <p class="sub">Let's build something reliable — send a message or email me directly.</p><br>
       <div class="contact-grid">
         <form id="contactForm" class="contact-form" autocomplete="off">
