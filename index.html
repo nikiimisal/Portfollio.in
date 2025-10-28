@@ -443,6 +443,175 @@
 }
 
 
+
+
+
+/* ===== Education Horizontal Timeline ===== */
+#education {
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#education h2 {
+  color: #00d1ff;
+  font-size: 1.8em;
+}
+
+#education .text-muted {
+  color: #aaa;
+}
+
+/* Timeline container */
+.education-timeline {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 80px 0;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.education-timeline::-webkit-scrollbar {
+  height: 6px;
+}
+.education-timeline::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Timeline Track */
+.timeline-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  padding: 0 80px;
+}
+
+/* Connecting line behind cards */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 255, 255, 0.25);
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Moving light on the line */
+.timeline-line::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -20px;
+  width: 12px;
+  height: 12px;
+  background: cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 8px cyan, 0 0 15px rgba(0,255,255,0.6);
+  animation: lightFlow 6s linear infinite;
+}
+
+@keyframes lightFlow {
+  0% { left: -20px; opacity: 0; }
+  10% { opacity: 1; }
+  80% { left: 100%; opacity: 1; }
+  100% { left: 105%; opacity: 0; }
+}
+
+/* ✈️ Airplane animation */
+.plane {
+  position: absolute;
+  top: calc(50% - 18px);
+  left: 0;
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 6px cyan);
+  animation: flyAcross 9s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes flyAcross {
+  0% { left: 0%; opacity: 1; transform: rotate(0deg); }
+  45% { left: 95%; opacity: 1; transform: rotate(8deg); }
+  50% { left: 100%; opacity: 0; }
+  55% { left: 0%; opacity: 0; transform: rotate(-8deg); }
+  60% { opacity: 1; }
+  100% { left: 95%; opacity: 1; transform: rotate(6deg); }
+}
+
+/* Cards (equal size) */
+.edu-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 20px 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
+  width: 260px;
+  height: 180px;
+  text-align: left;
+  position: relative;
+  z-index: 3;
+  transition: 0.3s;
+}
+
+/* Line connector in front of each card */
+.edu-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -80px;
+  width: 80px;
+  height: 2px;
+  background: rgba(0, 255, 255, 0.25);
+  z-index: 1;
+}
+.timeline-track .edu-card:last-child::after {
+  display: none; /* no line after last box */
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
+}
+
+/* Text inside cards */
+.edu-card h3 {
+  color: #00d1ff;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.edu-card h4 {
+  color: #ccc;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+.edu-card p {
+  color: #aaa;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-line,
+  .plane {
+    display: none;
+  }
+  .timeline-track {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+}
+
+
+
+
+
+    
     
   </style>
 </head>
@@ -635,7 +804,61 @@
   
 </section>
      
-  
+
+
+
+
+
+<section id="education">
+  <h2>Education</h2>
+  <p class="text-muted">My academic and professional journey</p>
+
+  <div class="education-timeline">
+    <div class="timeline-track">
+      <div class="timeline-line"></div>
+      <div class="plane">✈️</div>
+
+      <div class="edu-card">
+        <h3>Secondary School (X)</h3>
+        <h4>Holy Trinity Church School, Ghaziabad</h4>
+        <p>ICSE Board | Completed in 2016<br>Percentage: 92.20%</p>
+      </div>
+
+      <div class="edu-card">
+        <h3>Senior Secondary (XII)</h3>
+        <h4>Holy Trinity Church School, Ghaziabad</h4>
+        <p>ISC Board | PCM with Computer Science<br>Completed: 2018 | 91%</p>
+      </div>
+
+      <div class="edu-card">
+        <h3>Bachelor of Technology (B.Tech)</h3>
+        <h4>Jaypee Institute Of Information Technology</h4>
+        <p>Computer Science & Technology<br>2018 – 2022 | CGPA: 9.1</p>
+      </div>
+
+      <div class="edu-card">
+        <h3>Cloud Internship</h3>
+        <h4>AWS Partner Startup</h4>
+        <p>Worked on CI/CD pipelines, EC2 & Terraform</p>
+      </div>
+
+      <div class="edu-card">
+        <h3>DevOps Engineer</h3>
+        <h4>XYZ Tech</h4>
+        <p>Containerized microservices | Jenkins | Monitoring</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+    
     <section id="contact" class="container section">
        <h1>Contact</h1>  
       <p class="sub">Let's build something reliable — send a message or email me directly.</p><br>
