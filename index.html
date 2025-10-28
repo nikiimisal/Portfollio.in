@@ -442,7 +442,90 @@
   color: var(--accent);
 }
 
+.projects-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
 
+.projects-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+.projects-carousel::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 10px;
+}
+.projects-carousel::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.project-item {
+  flex: 0 0 auto;
+  width: 280px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 1rem;
+  text-align: left;
+}
+
+.project-body h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.project-body p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.project-body .meta {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: #aaa;
+}
+
+.btn.small {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.btn.small:hover {
+  background: #0056b3;
+}
+
+
+
+
+
+    
 
 
 
@@ -748,84 +831,85 @@
   <div class="section-header">
     <div>
       <h2>Projects</h2>
-      <p class="sub">Click a view repo to explore the projectdetails and repository</p>
+      <p class="sub">Click “View Repo” to explore project details and repository</p>
     </div>
-      <div class="meta">Want to explore more about my project, documentation, and notes? </div>        <a href="https://github.com/nikiimisal/index_section" target="_blank" class="btn small">Click Here</a>
+    <div class="meta">
+      Want to explore more about my project, documentation, and notes?
+      <a href="https://github.com/nikiimisal/index_section" target="_blank" class="btn small">Click Here</a>
+    </div>
+
     <div class="carousel-controls">
       <button id="prevProject" class="icon-btn">◀</button>
       <button id="nextProject" class="icon-btn">▶</button>
     </div>
   </div>
 
+  <!-- ✅ Projects Carousel -->
   <div class="projects-carousel" id="projectsCarousel" aria-roledescription="carousel">
 
+    <!-- Project 1 -->
     <div class="project-item">
       <div class="project-card">
         <div class="project-image">
-         <img src="https://github.com/nikiimisal/Portfollio.in/blob/main/img/1756991929423.jpg?raw=true" alt="My Project">
-
+          <img src="https://github.com/nikiimisal/Portfollio.in/blob/main/img/1756991929423.jpg?raw=true" alt="3-Tier Architecture">
         </div>
         <div class="project-body">
           <h3>3-Tier-Arc.</h3>
-          <p>Frontend + Backend + DB + EC2-all services (3-Tier) deployed.</p>
+          <p>Frontend + Backend + DB + EC2 - all services (3-Tier) deployed.</p>
           <div class="meta">GitHub Actions · EC2</div>
           <a href="https://github.com/nikiimisal/Project--Movie-Ticket-Booking-System-AWS-3-Tier-Architecture-" target="_blank" class="btn small">View Repo</a>
         </div>
       </div>
     </div>
 
-
-
+    <!-- Project 2 -->
     <div class="project-item">
       <div class="project-card">
         <div class="project-image">
-         <img src="https://github.com/nikiimisal/Portfollio.in/blob/main/img/LEMP.jpg?raw=true" alt="My Project">
+          <img src="https://github.com/nikiimisal/Portfollio.in/blob/main/img/LEMP.jpg?raw=true" alt="LEMP Project">
         </div>
         <div class="project-body">
           <h3>LEMP</h3>
-          <p>LEMP</p>
-          <div class="meta">S3+Cloud Front+RDS</div>
+          <p>LEMP Stack deployment using AWS.</p>
+          <div class="meta">S3 + CloudFront + RDS</div>
           <a href="https://github.com/nikiimisal/project-using-lapm-S3-CloudFront-RDS" target="_blank" class="btn small">View Repo</a>
         </div>
       </div>
     </div>
 
-  </div>
-    
-
-    
-    
+    <!-- Project 3 -->
     <div class="project-item">
       <div class="project-card">
         <div class="project-image">
-         <img src="https://github.com/nikiimisal/Portfollio.in/blob/main/img/LAMBADA.jpg?raw=true" alt="My Project">
+          <img src="https://github.com/nikiimisal/Portfollio.in/blob/main/img/LAMBADA.jpg?raw=true" alt="Serverless Application">
         </div>
         <div class="project-body">
           <h3>Serverless Application</h3>
-          <p>Using lambada+S3+DB</p>
-          <div class="meta">Lambada</div>
+          <p>Using Lambda + S3 + DB.</p>
+          <div class="meta">AWS Lambda</div>
           <a href="https://github.com/nikiimisal/project--Serverless-application--Sacred-Temple-File-Uploader--using-lambda" target="_blank" class="btn small">View Repo</a>
         </div>
       </div>
     </div>
 
+    <!-- Project 4 -->
     <div class="project-item">
       <div class="project-card">
         <div class="project-image">
-         <img src="https://github.com/nikiimisal/Portfollio.in/blob/main/img/jenkins.gif?raw=true" alt="My Project">
+          <img src="https://github.com/nikiimisal/Portfollio.in/blob/main/img/jenkins.gif?raw=true" alt="Network Automation">
         </div>
         <div class="project-body">
           <h3>Network Automation</h3>
-          <p>Jenkins</p>
-          <div class="meta">CICD. Automaction</div>
+          <p>Jenkins-based CI/CD automation.</p>
+          <div class="meta">CICD · Automation</div>
           <a href="https://github.com/nikiimisal/Jenkins" target="_blank" class="btn small">View Repo</a>
         </div>
       </div>
     </div>
 
   </div>
-  
 </section>
+
      
 
 
